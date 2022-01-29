@@ -60,5 +60,5 @@ contract Election  {
         }
 
         votes[_candidateId] += 1;
-    }   
+    }
 }
