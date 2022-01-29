@@ -34,40 +34,25 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_address",
+						"type": "address"
+					}
+				],
 				"name": "addVoter",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "candidatesList",
+				"inputs": [],
+				"name": "getNumberCandidate",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "id",
-						"type": "uint256"
-					},
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "party",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "voteCount",
+						"name": "",
 						"type": "uint256"
 					}
 				],
@@ -76,7 +61,7 @@
 			},
 			{
 				"inputs": [],
-				"name": "getCandidatesIDs",
+				"name": "getPartyCandidate",
 				"outputs": [
 					{
 						"components": [
@@ -112,71 +97,14 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "hasVoted",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "uint256",
-						"name": "_candidateId",
+						"name": "_voteIndex",
 						"type": "uint256"
 					}
 				],
 				"name": "vote",
 				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"name": "voters",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"name": "votes",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -208,10 +136,11 @@
 	},
 	"sources": {
 		"contracts/Election.sol": {
-			"keccak256": "0x71935c44e3079121fba93c496df86803a3852087dedcc779cf2374119758f77d",
+			"keccak256": "0x224bb15d39974c4f5af98a2e2fb7dc446a581bbb2ff4d3d491543612e94ee469",
+			"license": "MIT",
 			"urls": [
-				"bzz-raw://0c1f325790f25efe39e577498d6d3282771b058544340c684557664392f45ad2",
-				"dweb:/ipfs/QmZ5jpDAxKebpERcvo11Busn6BbZ4HAb9MbA3vU6odUcjf"
+				"bzz-raw://c2a2bf53147282189e8ef686ea88f00e06b6e1eb591b49e1fedc3d0384dd5a6c",
+				"dweb:/ipfs/QmR7CN5546aWwYnPFGCFEToMgFR4znaNoZTTDsMyMcczVZ"
 			]
 		}
 	},

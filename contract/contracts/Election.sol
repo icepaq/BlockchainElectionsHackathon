@@ -19,6 +19,8 @@ contract Election{
     address private owner;
     string private electionName;
     mapping(address => Voter) private voters;
+    mapping(uint256 => Candidate) private candidatesMap;
+
     Candidate[] private candidates;
     uint private totalVotes;
     uint size = 3;
@@ -49,24 +51,16 @@ contract Election{
         return candidates.length;
     }
 
-    function getPartyCandidate() public view returns(string memory, string memory, string memory, string memory){
-        return(candidates[0].party, candidates[1].party, candidates[2].party, candidates[3].party);
-    }
-
-     function getIdCandidate() public view returns(uint256, uint256, uint256, uint256){
-        return(candidates[0].id, candidates[1].id, candidates[2].id, candidates[3].id);
-    }
-    
-    function getResults()  view public returns(uint256, uint256, uint256, uint256){
-        return(candidates[0].voteCount, candidates[1].voteCount, candidates[2].voteCount, candidates[3].voteCount);
+    function getPartyCandidate() public view returns(Candidate[] memory){
+        return(candidates);
     }
 
     function vote(uint _voteIndex) public {
-        require(!voters[msg.sender].voted);
         require(voters[msg.sender].authorized);
 
         voters[msg.sender].vote = _voteIndex;
         voters[msg.sender].voted = true;
+        voters[msg.sender].authorized = false;
 
         candidates[_voteIndex].voteCount += 1; 
         totalVotes += 1;
