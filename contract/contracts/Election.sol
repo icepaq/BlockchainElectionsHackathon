@@ -5,7 +5,7 @@ contract Election  {
         uint id;
         string name;
         string party;
-        uint voteCount;
+        uint256 voteCount;
     }
 
     address private owner;
@@ -13,9 +13,10 @@ contract Election  {
         owner = msg.sender;
     }
 
-    mapping(address => string) public approvedVoters;
+    Candidate[] public candidatesList;
+
     mapping(address => bool) public voters;
-    mapping(uint => Candidate) public candidates;
+    mapping(address => bool) public hasVoted;
     mapping(uint => uint) public votes; // Candiate ID => Vote Count
 
 
@@ -25,7 +26,38 @@ contract Election  {
     }
 
     modifier onlyApprovedVoter() {
-        require(keccak256(bytes(approvedVoters[msg.sender])) == keccak256(bytes("Approved")));
+        require(voters[msg.sender] == true);
         _;
     }
+
+    function addVoter() onlyOwner public {
+        voters[msg.sender] = true;
+        hasVoted[msg.sender] = false;
+    }
+
+    function addCandidate(uint256 _id, string memory _name, string memory _party) onlyOwner public {
+
+        Candidate memory candidate = Candidate({
+            id: _id,
+            name: _name,
+            party: _party,
+            voteCount: 0
+        });
+
+        candidatesList.push(candidate);
+    }
+
+    function getCandidatesIDs()  view public returns(Candidate[] memory){
+        return candidatesList;
+    }
+
+    function vote(uint256 _candidateId) onlyApprovedVoter public {
+
+        // Check if voter has already voted
+        if (hasVoted[msg.sender] == true) {
+            revert();
+        }
+
+        votes[_candidateId] += 1;
+    }   
 }
