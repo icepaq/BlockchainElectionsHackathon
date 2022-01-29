@@ -30,3 +30,4 @@ Frontend - ReactJS
 - Go into a python virtual environment by running `poetry shell` inside the project folder.
 - Run `poetry install` to install all python dependencies.
 - Run `pre-commit install` to install formatters and linters for python. These tools check your code for errors and other issues.
+- Set the environment variables: `export TWILIO_ACCOUNT_SID=XX` and `export TWILIO_AUTH_TOKEN=XX`, or you can put them into `.env` file.
