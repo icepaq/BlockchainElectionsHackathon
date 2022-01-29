@@ -416,6 +416,20 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "pyjwt"
+version = "2.3.0"
+description = "JSON Web Token implementation in Python"
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[package.extras]
+crypto = ["cryptography (>=3.3.1)"]
+dev = ["sphinx", "sphinx-rtd-theme", "zope.interface", "cryptography (>=3.3.1)", "pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)", "mypy", "pre-commit"]
+docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
+tests = ["pytest (>=6.0.0,<7.0.0)", "coverage[toml] (==5.0.4)"]
+
+[[package]]
 name = "pypiwin32"
 version = "223"
 description = ""
@@ -425,6 +439,14 @@ python-versions = "*"
 
 [package.dependencies]
 pywin32 = ">=223"
+
+[[package]]
+name = "pytz"
+version = "2021.3"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
 name = "pywin32"
@@ -501,6 +523,19 @@ description = "List processing tools and functional utilities"
 category = "main"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "twilio"
+version = "7.5.1"
+description = "Twilio API client and TwiML generator"
+category = "main"
+optional = false
+python-versions = ">=3.6.0"
+
+[package.dependencies]
+PyJWT = ">=2.0.0,<3.0.0"
+pytz = "*"
+requests = ">=2.0.0"
 
 [[package]]
 name = "urllib3"
@@ -597,7 +632,7 @@ email = ["email-validator"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "c4af8ff25cd78b322eb3198dab161c81ab7ef5917318e4c68f6187743b444a89"
+content-hash = "0ff0b7c7cbe81a824d8738ffbe01bbbff80d76f2e30b5dfa6c3f7be4262de66c"
 
 [metadata.files]
 0x-web3 = [
@@ -820,9 +855,17 @@ pycryptodome = [
     {file = "pycryptodome-3.13.0-pp36-pypy36_pp73-win32.whl", hash = "sha256:b3af53dddf848afb38b3ac2bae7159ddad1feb9bac14aa3acec6ef1797b82f8d"},
     {file = "pycryptodome-3.13.0.tar.gz", hash = "sha256:95bacf9ff7d1b90bba537d3f5f6c834efe6bfbb1a0195cb3573f29e6716ef08d"},
 ]
+pyjwt = [
+    {file = "PyJWT-2.3.0-py3-none-any.whl", hash = "sha256:e0c4bb8d9f0af0c7f5b1ec4c5036309617d03d56932877f2f7a0beeb5318322f"},
+    {file = "PyJWT-2.3.0.tar.gz", hash = "sha256:b888b4d56f06f6dcd777210c334e69c737be74755d3e5e9ee3fe67dc18a0ee41"},
+]
 pypiwin32 = [
     {file = "pypiwin32-223-py3-none-any.whl", hash = "sha256:67adf399debc1d5d14dffc1ab5acacb800da569754fafdc576b2a039485aa775"},
     {file = "pypiwin32-223.tar.gz", hash = "sha256:71be40c1fbd28594214ecaecb58e7aa8b708eabfa0125c8a109ebd51edbd776a"},
+]
+pytz = [
+    {file = "pytz-2021.3-py2.py3-none-any.whl", hash = "sha256:3672058bc3453457b622aab7a1c3bfd5ab0bdae451512f6cf25f64ed37f5b87c"},
+    {file = "pytz-2021.3.tar.gz", hash = "sha256:acad2d8b20a1af07d4e4c9d2e9285c5ed9104354062f275f3fcd88dcef4f1326"},
 ]
 pywin32 = [
     {file = "pywin32-303-cp310-cp310-win32.whl", hash = "sha256:6fed4af057039f309263fd3285d7b8042d41507343cd5fa781d98fcc5b90e8bb"},
@@ -892,6 +935,10 @@ toml = [
 toolz = [
     {file = "toolz-0.11.2-py3-none-any.whl", hash = "sha256:a5700ce83414c64514d82d60bcda8aabfde092d1c1a8663f9200c07fdcc6da8f"},
     {file = "toolz-0.11.2.tar.gz", hash = "sha256:6b312d5e15138552f1bda8a4e66c30e236c831b612b2bf0005f8a1df10a4bc33"},
+]
+twilio = [
+    {file = "twilio-7.5.1-py2.py3-none-any.whl", hash = "sha256:8e2f487e49a37da9caf61bfc3ca61883c8af5f478aafe4160cce738f81bd1e5a"},
+    {file = "twilio-7.5.1.tar.gz", hash = "sha256:d6f22603065b6bac232e0fb16e9a35abb71b6a9b38b7aa7fccf64d37aff4d01c"},
 ]
 urllib3 = [
     {file = "urllib3-1.26.8-py2.py3-none-any.whl", hash = "sha256:000ca7f471a233c2251c6c7023ee85305721bfdf18621ebff4fd17a8653427ed"},
