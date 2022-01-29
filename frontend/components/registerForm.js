@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export default function registerForm() {
+function registerForm() {
   Swal.fire({
     title: "Register Your ETH Address",
     html: `<input type="text" id="name" class="swal2-input" placeholder="Your Full Name">
@@ -24,5 +24,23 @@ export default function registerForm() {
         walletAddress: walletAddress,
       };
     },
-  }).then((result) => {});
+  }).then((result) => {
+    if (result.isConfirmed) {
+      fetch(
+        "/api/register?name=${name}&email=${email}&phoneNumber=${phoneNumber}&walletAddress=${walletAddress}"
+      )
+        .then((response) => {
+          if (response.ok) {
+            Swal.fire("You have been registered !");
+          } else {
+            Swal.fire("An error occured");
+          }
+        })
+        .catch((error) => {
+          Swal.fire("We have encountered an error: ${error}");
+        });
+    }
+  });
 }
+
+export default registerForm;
