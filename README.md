@@ -4,7 +4,9 @@ ConuHacks 2022 Submission
 
 ## Tech Stack
 Blockchain - Ethereum
+
 Backend - Python/Flask, NodeJS/Express
+
 Frontend - ReactJS
 
 ## Team
