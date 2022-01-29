@@ -1,4 +1,5 @@
-pragma solidity 0.4.24;
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.11;
 
 contract Election{
 
@@ -27,16 +28,16 @@ contract Election{
         _;
     }
 
-    constructor() public{
+    constructor() {
         owner = msg.sender;
         electionName = "Canada Election 2022";
-        addCandidate(0, "Trudeau, Justin" ,"Liberal Party of Canada");
-        addCandidate(1, "O'Toole, Erin" ,"Conservative Party of Canada");
-        addCandidate(2, "Blanchet, Yves-François" ,"Bloc Québécois");
-        addCandidate(3, "Singh, Jagmeet" ,"New Democratic Party");
+        addCandidate(0, "Trudeau, Justin", "Liberal Party of Canada");
+        addCandidate(1, "O'Toole, Erin", "Conservative Party of Canada");
+        addCandidate(2, "Blanchet, Yves-Francois", "Block-Quebecois");
+        addCandidate(3, "Singh, Jagmeet", "New Democratic Party");
     }
 
-    function addCandidate(uint256 _id, string _name, string _party) ownerOnly public{
+    function addCandidate(uint256 _id, string memory _name, string memory _party) ownerOnly public{
         candidates.push(Candidate(_id, _name, _party, 0));
     }
 
@@ -48,16 +49,16 @@ contract Election{
         return candidates.length;
     }
 
-    function getPartyCandidate() public view returns(string, string, string, string){
-        return(candidates[0].party,candidates[1].party,candidates[2].party,candidates[3].party);
+    function getPartyCandidate() public view returns(string memory, string memory, string memory, string memory){
+        return(candidates[0].party, candidates[1].party, candidates[2].party, candidates[3].party);
     }
 
      function getIdCandidate() public view returns(uint256, uint256, uint256, uint256){
-        return(candidates[0].id,candidates[1].id,candidates[2].id,candidates[3].id);
+        return(candidates[0].id, candidates[1].id, candidates[2].id, candidates[3].id);
     }
     
     function getResults()  view public returns(uint256, uint256, uint256, uint256){
-        return(candidates[0].voteCount,candidates[1].voteCount,candidates[2].voteCount,candidates[3].voteCount);
+        return(candidates[0].voteCount, candidates[1].voteCount, candidates[2].voteCount, candidates[3].voteCount);
     }
 
     function vote(uint _voteIndex) public {
@@ -70,9 +71,4 @@ contract Election{
         candidates[_voteIndex].voteCount += 1; 
         totalVotes += 1;
     }
-
-    function end() ownerOnly public {
-        selfdestruct(owner);
-    }
-
 }
