@@ -13,6 +13,7 @@ requests = "^2.27.1"
 WTForms = "^3.0.1"
 Flask-Cors = "^3.0.10"
 pre-commit = "^2.17.0"
+twilio = "^7.5.1"
 
 [tool.poetry.dev-dependencies]
 
