@@ -51,3 +51,7 @@
 
     cursor: pointer;
 }
+
+.results {
+    margin: 30px;
+}
