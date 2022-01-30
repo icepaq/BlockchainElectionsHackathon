@@ -13,7 +13,8 @@ function registerForm() {
       const name = Swal.getPopup().querySelector("#name").value;
       const email = Swal.getPopup().querySelector("#email").value;
       const phoneNumber = Swal.getPopup().querySelector("#phoneNumber").value;
-      const walletAddress = Swal.getPopup().querySelector("#walletAddress").value;
+      const walletAddress =
+        Swal.getPopup().querySelector("#walletAddress").value;
       if (!name || !email || !phoneNumber || !walletAddress) {
         Swal.showValidationMessage(`Please enter the missing field(s)`);
       }
@@ -25,7 +26,7 @@ function registerForm() {
       };
     },
   }).then((result) => {
-      console.log(result);
+    console.log(result);
     if (result.isConfirmed) {
       fetch(
         `/api/register?name=${result.value.name}&email=${result.value.email}&phoneNumber=${result.value.phoneNumber}&walletAddress=${result.value.walletAddress}`
