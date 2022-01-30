@@ -14,8 +14,8 @@ export default async function register(req, res) {
   await collection.insertOne({
     name: req.query.name,
     email: req.query.email,
-    number: req.query.number,
-    address: req.query.address,
+    number: req.query.phoneNumber,
+    address: req.query.walletAddress,
   });
 
   res.status(200).json({ message: "Hello World" });
