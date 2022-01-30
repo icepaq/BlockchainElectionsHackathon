@@ -300,3 +300,10 @@ werkzeug==2.0.2; python_version >= "3.6" \
 wtforms==3.0.1; python_version >= "3.7" \
     --hash=sha256:837f2f0e0ca79481b92884962b914eba4e72b7a2daaf1f939c890ed0124b834b \
     --hash=sha256:6b351bbb12dd58af57ffef05bc78425d08d1914e0fd68ee14143b7ade023c5bc
+
+twilio~=7.5.1
+python-dotenv~=0.19.2
+Flask~=2.0.2
+web3~=4.8.2
+requests~=2.27.1
+matplotlib~=3.5.1
