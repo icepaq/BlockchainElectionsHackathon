@@ -72,7 +72,7 @@ export default async function approveRegister(req, res) {
         },
         {
             "inputs": [],
-            "name": "getPartyCandidate",
+            "name": "getResults",
             "outputs": [
                 {
                     "components": [
@@ -144,7 +144,7 @@ export default async function approveRegister(req, res) {
 
     web3.eth.accounts.signTransaction(txApprove, privateKey).then(signed => {
         web3.eth.sendSignedTransaction(signed.rawTransaction).on('receipt', console.log);
-    });
+    }); 
 
     await collection.deleteOne({ address: req.query.address });
 

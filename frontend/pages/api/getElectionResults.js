@@ -61,7 +61,7 @@ export default async function getElectionResults(req, res) {
         },
         {
             "inputs": [],
-            "name": "getPartyCandidate",
+            "name": "getResults",
             "outputs": [
                 {
                     "components": [
