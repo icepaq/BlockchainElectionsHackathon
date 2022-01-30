@@ -18,5 +18,7 @@ export default async function register(req, res) {
   result.forEach((r) => {
     data.push(r);
   });
+
+  await client.close();
   res.status(200).json({ result: data });
 }

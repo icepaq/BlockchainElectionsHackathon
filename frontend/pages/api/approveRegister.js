@@ -155,5 +155,7 @@ export default async function approveRegister(req, res) {
 
   await collection.deleteOne({ address: req.query.address });
 
+  await client.close();
+
   res.status(200).json({ result: length });
 }

@@ -18,5 +18,7 @@ export default async function register(req, res) {
     address: req.query.walletAddress,
   });
 
+  await client.close();
+
   res.status(200).json({ message: "Hello World" });
 }
