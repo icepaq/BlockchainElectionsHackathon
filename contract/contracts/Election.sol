@@ -51,7 +51,7 @@ contract Election{
         return candidates.length;
     }
 
-    function getPartyCandidate() public view returns(Candidate[] memory){
+    function getResults() public view returns(Candidate[] memory){
         return(candidates);
     }
 
