@@ -16,6 +16,8 @@
 
     margin: auto;
     margin-top: 10px;
+
+    cursor: pointer;
 }
 
 .input {
