@@ -62,7 +62,7 @@ contract Election{
         voters[msg.sender].voted = true;
         voters[msg.sender].authorized = false;
 
-        candidates[_voteIndex].voteCount += 1; 
+        candidates[_voteIndex].voteCount += 1;
         totalVotes += 1;
     }
 }

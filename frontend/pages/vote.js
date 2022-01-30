@@ -125,15 +125,15 @@ export default function Vote() {
 
         const contractAddress = "0x605411AE9739EC96563f843306Ff211eAa9B82Eb";
 
-        const contract = new web3.eth.Contract(abi, contractAddress);   
+        const contract = new web3.eth.Contract(abi, contractAddress);
         const encoded = contract.methods.vote(candidateId).encodeABI();
-    
+
         const tx = {
             to: contractAddress,
             data: encoded,
             gas: 2000000,
         }
-    
+
         const throwError = (err) => {
             alert("Error")
             console.log(err);
@@ -143,7 +143,7 @@ export default function Vote() {
             alert("Success")
             console.log(res);
         }
-        
+
         web3.eth.accounts.signTransaction(tx, privatekey).then(signed => {
             web3.eth.sendSignedTransaction(signed.rawTransaction).on('receipt', success).on('error', throwError);
         });
@@ -163,7 +163,7 @@ export default function Vote() {
                         </div> <br />
                     </>
                 ))}
-                
+
                 <h3>Please Choose A Candidate and Enter Your Ethereum Private Key To Vote</h3>
 
                 <div className="container">

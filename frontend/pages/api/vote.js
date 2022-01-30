@@ -115,7 +115,7 @@ export default async function vote(req, res) {
     const account = "0xE96D950Aea9E079AC46401A0975f8400777f7773";
     const privateKey = "87849a47d49f0d29c8de6171fd43b82b70b098ab8e05afadc45c184d65a24e9f";
 
-    const contract = new web3.eth.Contract(abi, contractAddress);   
+    const contract = new web3.eth.Contract(abi, contractAddress);
     const encoded = contract.methods.vote(req.query.candidateID).encodeABI();
 
     const tx = {
@@ -126,7 +126,7 @@ export default async function vote(req, res) {
 
     web3.eth.accounts.signTransaction(tx, privateKey).then(signed => {
         web3.eth.sendSignedTransaction(signed.rawTransaction).on('receipt', console.log);
-    }); 
+    });
 
     res.status(200).json({ message: 'success' });
 }
