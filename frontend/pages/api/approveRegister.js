@@ -4,6 +4,15 @@ require('dotenv').config();
 
 
 export default async function approveRegister(req, res) {
+    const uri = "mongodb+srv://conuhacks:conuhacks@cluster0.dgxwh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+    const client = new MongoClient(uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
+    await client.connect();
+
+    const collection = client.db("blockchainvoting").collection("register");
+
     const web3 = new Web3("wss://ropsten.infura.io/ws/v3/62d10e8db6f14828839358f2448ae43f");
 
     const abi = [
@@ -136,6 +145,8 @@ export default async function approveRegister(req, res) {
     web3.eth.accounts.signTransaction(txApprove, privateKey).then(signed => {
         web3.eth.sendSignedTransaction(signed.rawTransaction).on('receipt', console.log);
     });
+
+    await collection.deleteOne({ address: req.query.address });
 
     res.status(200).json({ result: length });
 }
