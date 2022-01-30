@@ -17,7 +17,7 @@ export default function Home() {
         </h1>
 
         <p className={styles.description}>
-          You can get started by registering your Etherium address
+          You can get started by registering your Ethereum address
         </p>
 
         <div className={styles.grid}>
