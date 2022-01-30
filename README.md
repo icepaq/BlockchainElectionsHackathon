@@ -54,13 +54,3 @@ This will run the image generator
 
 
 
-
-
-
-~~- Make sure you have installed `python3` and `pip`. **If you're on Widows, make sure you have added python3 to your SYSTEM PATH, the default python installation on Windows only add the binaries to your USER PATH. Please refer to this StackOverFlow answer on how to add python to you SYSTEM PATH [add-to-path](https://stackoverflow.com/a/65496777). All commands below WILL FAIL if python is not configured in SYSTEM PATH**.
-~- Clone this repository.
--~ Install poetry from [Poetry-python](https://python-poetry.org/).
-~- Go into a python virtual environment by running `poetry shell` inside the project folder.
-~- Run `poetry install` to install all python dependencies.
-~- Run `pre-commit install` to install formatters and linters for python. These tools check your code for errors and other issues.
-~- Set the environment variables: `export TWILIO_ACCOUNT_SID=XX` and `export TWILIO_AUTH_TOKEN=XX`, or you can put them into `.env` file.
