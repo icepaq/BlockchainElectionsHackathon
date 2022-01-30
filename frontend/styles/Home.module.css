@@ -27,3 +27,27 @@
 
   padding: 10px 20px;
 }
+
+.user {
+    padding: 30px;
+    border-style: solid;
+    border-width: 2px;
+
+    width: min-content;
+
+    margin: 20px;
+}
+
+.approve {
+    background-color: #76bdd3;
+
+    width: min-content;
+
+    padding: 10px 20px;
+
+    border-radius: 5px;
+
+    margin-top: 10px;
+
+    cursor: pointer;
+}
