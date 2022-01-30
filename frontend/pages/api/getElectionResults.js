@@ -125,7 +125,5 @@ export default async function getElectionResults(req, res) {
             result = r;
         });
 
-    await client.close();
-
   res.status(200).json({ result: result });
 }
