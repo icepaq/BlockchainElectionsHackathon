@@ -40,6 +40,8 @@ export default function Results() {
             <div className={styles.results}>
                 <h1>Results</h1>
                 {votes}
+
+                <Image src="/barplot.png" width={1200} height={800}/>
             </div>
         </>
     )

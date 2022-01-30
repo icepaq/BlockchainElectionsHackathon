@@ -5,6 +5,9 @@ import time
 
 
 def run_visualization():
+
+    print("Visualization started")
+    
     response_API = requests.get('http://localhost:3000/api/getElectionResults')
     data = response_API.text
     parse_json = json.loads(data)
@@ -44,7 +47,7 @@ def run_visualization():
     ax1.axis('equal')
     plt.tight_layout()
     plt.savefig('pieplot.png')
-    time.sleep(10)
+    time.sleep(3)
 
 while True:
     run_visualization()
